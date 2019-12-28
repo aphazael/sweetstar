@@ -1,0 +1,70 @@
+
+<h3><%= @hh %></h3>
+
+<!-- Log Window -->
+<div class="log-frame">
+<% @log_msg.each do |msg| %>
+  <div> <%= msg %> </div>
+<% end %>
+</div>
+
+<!-- Hidden Link Row -->
+<% @links_hash.each do |word, vals| %>
+  <a href="<%= url_for(action: 'view', controller: 'earth', grid_id: vals[0], direct: vals[1], radius: vals[2]) %>" class="hidden_nav_link" id="nav_<%= word %>">
+    <button> move <%= word %> </button>
+  </a>
+<% end %>
+
+
+<!-- MAP -->
+<% dim = @terrain_grid.length * 120 %>
+<div class="map-container" id="map-container" style="width: <%= dim %>px; height: <%= dim %>px" data-center-grid="<%= @center_grid_id %>" data-radius="<%= @radius %>">
+<!-- DATASTORE -->
+<div class="datastore" id="datastore"
+  data-icon-move="<%= asset_path "movement.png" %>"
+  data-icon-combat="<%= asset_path "boom.png" %>"
+></div> <!-- end datastore -->
+<!-- CONTROL PANEL -->
+<div class="controls" id="controls">
+<button class="toggle-button <%= @refresh_on ? 'on' : '' %>" id="refresh-button" data-toggle="<%= @refresh_on ? 'on' : '' %>" onclick="toggleButton(this)">Refresh</button>
+</div> 
+<!--MAP ROWS BEGIN--> 
+  <% @terrain_grid.each_with_index do |row, ind| %>
+  <div class="hex-row <%= ind.even? ? 'even' : '' %>">
+  <%   row.each do |grid| %>
+        <% if grid %>
+          <div class="hex grid-<%= grid.id %> <%= grid.veg_lvl.shortname %>_veg_lvl <%= grid.landform.shortname %>_landform <%= grid.substrate.shortname %>_substrate" id="grid-<%= grid.id %>"> 
+            <!-- TERRAIN -->
+            <img class="landform-overlay" src="<%= asset_path "landforms/#{grid.landform.shortname}.png" %>">
+            <img class="veglvl-overlay" src="<%= asset_path "veglvls/#{grid.veg_lvl.shortname}.png" %>">
+            <!-- UNITS -->
+            <div class="unit-container">
+              <% grid.troops.each do |unit| %>
+                <% next unless unit.alive? %>
+                <div class="troop-slot" id="unit-<%= unit.id %>">
+                  <img src="<%= asset_path "units/#{unit.icon_file_name}.png" %>" class="unit-icon">
+                  <!-- Movement Icon -->
+                  <% if unit.moving? %>
+                    <img class="move-icon" src="<%= asset_path "movement.png" %>">
+                  <% end %>
+                  <div class="unit-data"> <%= unit.quick_stats %> </div>
+                </div>
+              <% end %>
+              <!-- Combat Icon -->
+              <% if grid.troops.any? { |unit| unit.fighting? } %>
+                <img class="combat-icon" src="<%= asset_path "boom.png" %>">
+              <% end %>
+            </div>
+            <!-- HEX SHAPE (Thanks, jtauber.github.io!) -->
+             <div class="top"></div>
+             <div class="middle"> <%= grid.terrain %> <br/> <%= grid.id %> </div>
+             <div class="bottom"></div>
+           </div>
+        <% else %>
+          <div class="hex hexpad"><div class="middle">&nbsp;</div></div>
+        <% end %>
+  <%   end %>
+  </div>
+  <% end %>
+</div>
+

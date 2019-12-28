@@ -1,0 +1,22 @@
+triplet: s-v-l
+substrate-vegetation-landform
+
+substrate:
+  - sand,
+  - soil,
+  - clay,
+  - gravel,
+  - rock,
+vegetation:
+  - barren
+  - grasses
+  - brush
+  - woods
+  - jungle
+landform
+  - flat
+  - craters?
+  - hills
+  - mountains
+  - peaks
+

@@ -1,0 +1,130 @@
+- id: 1
+  name: Rocky
+  sym: D
+  desc: Asteroids and stuff
+  water_range: 0..5
+  temp_range: 0..10
+  substrates:
+    rock: 10
+  landforms:
+    flat: 8
+    rolling: 5
+    hills: 5
+    mountains: 8
+    peaks: 5
+    swamp: 0
+    craters: 10
+    highlands: 5
+  veg_lvls:
+    barren: 10    
+
+- id: 2
+  name: Earthlike
+  sym: M
+  desc: Like the Earth
+  water_range: 40..50
+  temp_range: 10..30
+  substrates:
+    rock: 2 
+    sand: 4
+    clay: 2
+    soil: 20
+  landforms:
+    flat: 10
+    rolling: 10
+    hills: 10
+    mountains: 7
+    peaks: 4
+    swamp: 2
+    craters: 1
+    highlands: 8
+  veg_lvls:
+    barren: 1
+    prairie: 5
+    grassland: 5
+    woods: 5
+    forrest: 5 
+    jungle: 2
+    borreal: 2
+    tundra: 1
+
+- id: 3
+  name: Hot Jupiter
+  sym: T
+  desc: Hot and gaseous
+  water_range: 0..40
+  temp_range: 80..150
+
+- id: 4
+  name: Harsh
+  sym: K
+  desc: Toxic atmosphere or hostile conditions
+  water_range: 20..60
+  temp_range: 0..20
+
+- id: 5
+  name: Ice World
+  sym: H
+  desc: Cold, like Hoth
+  water_range: 0..60
+  temp_range: -10..5
+
+- id: 6
+  name: Water World
+  sym: N
+  desc: And not a drop to drink
+  water_range: 85..100
+  temp_range: 10..30
+
+- id: 7
+  name: Flat
+  sym: F
+  desc: For Testing
+  water_range: 0..0
+  temp_range: 0..10
+  substrates:
+    rock: 10
+  landforms:
+    flat: 10
+  veg_lvls:
+    barren: 10    
+    tundra: 2
+    prairie: 2
+
+- id: 8
+  name: Quasi Earthlike
+  sym: Q
+  desc: Like the Earth.. sort of
+  water_range: 25..35
+  temp_range: 10..30
+  substrates:
+    rock: 1 
+    sand: 10
+    clay: 1
+    soil: 30
+  landforms:
+    flat: 30
+    rolling: 18
+    hills: 8
+    mountains: 5
+    peaks: 2
+    swamp: 0
+    craters: 1
+    highlands: 0
+  veg_lvls:
+    barren: 1
+    prairie: 10
+    grassland: 10
+    woods: 5
+    forrest: 3
+    jungle: 1
+    borreal: 0
+    tundra: 0
+
+# - id:
+#   name:
+#   sym:
+#   desc:
+#   water_range:
+#   temp_range:
+

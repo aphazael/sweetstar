@@ -1,0 +1,47 @@
+- id: 0
+  shortname: water
+
+- id: 1
+  shortname: barren
+  density: 0
+  richness: 0
+
+- id: 2
+  shortname: prairie
+  density: 0
+  richness: 1
+
+- id: 3
+  shortname: grassland
+  density: 0
+  richness: 2
+
+- id: 4
+  shortname: woods
+  density: 1
+  richness: 2
+
+- id: 5
+  shortname: forrest
+  density: 2
+  richness: 1
+
+- id: 6
+  shortname: jungle
+  density: 3
+  richness: 1
+
+- id: 7
+  shortname: borreal
+  density: 2
+  richness: 2
+
+- id: 8
+  shortname: tundra
+  density: 1
+  richness: 0
+
+# - id:
+#   shortname:
+#   density:
+#   richness:

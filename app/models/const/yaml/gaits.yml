@@ -1,0 +1,18 @@
+- id: 1
+  shortname: foot
+  roughness_penalty: 1
+  density_penalty: 1
+  softness_penalty: 1
+
+- id: 2
+  shortname: mounted
+  roughness_penalty: 0.5
+  density_penalty: 1.5
+  softness_penalty: 1
+
+- id: 3
+  shortname: critter
+  roughness_penalty: 1.5
+  density_penalty: 0.5
+  softness_penalty: 1
+

@@ -1,0 +1,51 @@
+- id: 0
+  shortname: water
+
+- id: 1
+  shortname: flat
+  grade: 0
+  roughness: 0
+
+- id: 2
+  shortname: rolling
+  grade: 0
+  roughness: 1
+
+- id: 3
+  shortname: hills
+  grade: 1
+  roughness: 1
+
+- id: 4 
+  shortname: mountains
+  grade: 2
+  roughness: 2
+  not_veg: [jungle, forrest, borreal]
+
+- id: 5
+  shortname: peaks
+  grade: 3
+  roughness: 3
+  not_veg: [jungle, forrest, woods, borreal]
+
+- id: 6
+  shortname: swamp
+  grade: 0
+  roughness: 2
+  not_veg: [jungle, borreal]
+
+- id: 7
+  shortname: craters
+  grade: 1
+  roughness: 3
+  not_veg: [jungle, borreal]
+
+- id: 8
+  shortname: highlands
+  grade: 2
+  roughness: 1
+
+# - id:
+#   shortname:
+#   grade:
+#   roughness:

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  troop: one
+  command: MyString
+  args: MyString
+  starts: 2017-07-12 21:38:21
+  completed: 2017-07-12 21:38:21
+
+two:
+  troop: two
+  command: MyString
+  args: MyString
+  starts: 2017-07-12 21:38:21
+  completed: 2017-07-12 21:38:21

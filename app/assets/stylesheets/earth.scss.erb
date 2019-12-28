@@ -1,0 +1,177 @@
+// Place all the styles related to the earth controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//////// MAP FRAME STUFF ////////
+
+.map-container {
+  width: 90%;
+}
+
+.hidden_nav_link {
+  visibility: hidden;
+}
+
+@media screen and (orientation: portrait) {
+  .hidden_nav_link {
+    visibility: visible;
+  }
+}
+
+.hex {
+    float: left;
+    margin-left: 3px;
+    margin-bottom: -26px;
+}
+
+.hex {
+  position: relative;
+
+  &:hover {
+    background-color: cyan;
+    .middle {
+      z-index: 0;
+    }
+  }
+
+  .top {
+      width: 0;
+      border-bottom: 30px solid;
+      border-bottom-color: inherit;
+      border-left: 52px solid transparent;
+      border-right: 52px solid transparent;
+  }
+
+  .middle {
+      position: relative;
+      width: 104px;
+      height: 60px;
+      z-index: -1;
+  }
+
+  .bottom {
+      width: 0;
+      border-top: 30px solid;
+      border-top-color: inherit;
+      border-left: 52px solid transparent;
+      border-right: 52px solid transparent;
+  }
+
+  .landform-overlay { // img tag within hex. contains transluc img
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    opacity: 0.95;
+  }
+
+  .veglvl-overlay { // img tag within hex. contains transluc img
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    opacity: 0.75;
+  }
+
+  //// SUBSTRATES ////
+<% Const::GridSubstrate.all.each do |sub| %>
+  &.<%= sub.shortname %>_substrate {
+    border-top-color: <%= sub.csscolor %>;
+    border-bottom-color: <%= sub.cssshadow %>;
+    .middle {
+      background: linear-gradient(<%= sub.cssshadow %>, <%= sub.csscolor %>);
+    }
+  }
+
+<% end %>
+
+  //// UNITS ////
+  .unit-container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    z-index: 10;
+
+    .troop-slot {
+      position: absolute;
+      height: 60%;
+      width: 40%;
+
+      top: 20%;
+      left: 30%;
+      background-color: rgba(255, 255, 255, 0.95);
+
+      border-style: outset;
+
+      .move-icon {
+        height: 30px;
+        width: 30px;
+        position: absolute;
+      }
+
+      .unit-data {
+        position: absolute;
+        background-color: yellow;       
+        visibility: hidden;
+      }
+      &:hover {
+        .unit-data {
+          visibility: visible;
+        }
+      }
+
+
+      .unit-popup {
+        position: absolute;
+        left: -175%;
+        background-color: white;
+        top: -150px;
+        width: 175px;        
+        height: 150px;
+        visibility: hidden;
+      }
+      &.on {
+        .unit-popup {
+          visibility: visible;
+        }
+      }
+
+
+    }
+
+    .combat-icon {
+      height: 100%;
+      width: 100%;
+      position: absolute;    
+    }
+
+    .unit-icon {
+      // Should this be up a level, under troop-slot?
+      position: absolute;
+      height: 100%;
+      width: 100%;
+    }
+
+  }
+
+}
+.hex-row {
+    clear: left;
+}
+.hex-row.even {
+    margin-left: 53px;
+}
+
+///////// OTHER STUFF //////////
+
+
+.toggle-button {
+  &.on {
+    background-color: white;
+  }
+
+  &.off {
+    background-color: black;
+  }
+}

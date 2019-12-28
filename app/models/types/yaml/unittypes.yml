@@ -1,0 +1,37 @@
+- id: 1
+  name: Hare
+  sym: hare
+  desc: Basic Herbivore
+  gait: critter
+  civ_lvl: 0
+  max_hp: 2
+  spd: 16
+  dmg: 1
+  stl: 5
+  vis: 4
+  icon: hare
+
+- id: 2
+  name: Fox
+  sym: fox
+  desc: Basic Carnivore
+  gait: mounted
+  civ_lvl: 0
+  max_hp: 5
+  spd: 10
+  dmg: 2
+  stl: 4
+  vis: 8
+  icon: fox
+
+
+# - id: 1
+#   name: Test Unit
+#   sym: test
+#   desc: Just a test
+#   move_type: 'foot',
+#   civ_lvl: 5,
+#   max_hp: 10,
+#   spd: 5,
+#   dmg: 2,
+#   icon: "man"

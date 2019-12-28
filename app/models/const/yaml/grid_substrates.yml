@@ -1,0 +1,44 @@
+- id: 0
+  shortname: water
+  csscolor: '#3344aa'
+  cssshadow: '#001177'
+
+- id: 1
+  shortname: rock
+  softness: 0
+  fertility: 0
+  csscolor: '#777777'
+  cssshadow: '#444444'
+  not_landforms: [swamp]
+  not_veg: [jungle, forrest, borreal, woods]
+
+- id: 2
+  shortname: sand
+  softness: 2
+  fertility: 1
+  csscolor: '#eeeeaa'
+  cssshadow: '#bbbb77'
+  not_landforms: [mountains, peaks, swamp, craters]
+  not_veg: [jungle, forrest, borreal]
+
+- id: 3
+  shortname: clay
+  softness: 0
+  fertility: 1
+  csscolor: '#ff8877'
+  cssshadow: '#cc5544'
+  not_landforms: [peaks, swamp]
+  not_veg: [jungle]
+
+- id: 4
+  shortname: soil
+  softness: 1
+  fertility: 2
+  csscolor: '#996633'
+  cssshadow: '#663300'
+  not_landforms: [mountains, peaks]
+
+# - id: 
+#   shortname: 
+#   softness: 
+#   fertility: 
